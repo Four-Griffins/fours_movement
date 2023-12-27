@@ -6,7 +6,8 @@
 	"mixins": [],
 	"client": [
 		"ClientPlayerMovementMixin",
-    "PlayerMovementMixin"
+    "PlayerMovementMixin",
+    "LivingEntityMovementMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
