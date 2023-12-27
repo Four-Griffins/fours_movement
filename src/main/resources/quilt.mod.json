@@ -1,0 +1,39 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "com.griffins",
+		"id": "fours_movement",
+		"version": "${version}",
+		"metadata": {
+			"name": "4's Movement",
+			"description": "A small mod adding some movement options like vaults, wall jumps and double jumps.",
+			"contributors": {
+				"four-griffins": "Main Dev"
+			},
+			"contact": {
+				"homepage": "https://github.com/four-griffins"
+			},
+			"icon": "assets/example_mod/icon.png"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"init": "com.griffins.movement.MovementMod",
+			"client_init": "com.griffins.movement.MovementClient"
+		},
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.19.1"
+			},
+			{
+				"id": "quilted_fabric_api",
+				"versions": ">=7.0.2"
+			},
+			{
+				"id": "minecraft",
+				"versions": ">=1.20"
+			}
+		]
+	},
+	"mixin": "movement.mixins.json"
+}

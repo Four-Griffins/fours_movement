@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "com.griffins.movement.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [],
+	"client": [
+		"ClientPlayerMovementMixin",
+    "PlayerMovementMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
