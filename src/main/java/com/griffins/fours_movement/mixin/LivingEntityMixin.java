@@ -1,11 +1,6 @@
-package com.griffins.movement.mixin;
+package com.griffins.fours_movement.mixin;
 
-import com.griffins.movement.MovementMod;
-import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -13,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
-public abstract class LivingEntityMovementMixin {
+public abstract class LivingEntityMixin {
 	private int timeSinceSneak = 0;
 
 	@Inject(method = "tickMovement", at = @At("HEAD"))

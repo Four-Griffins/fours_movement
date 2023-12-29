@@ -1,10 +1,8 @@
-package com.griffins.movement;
+package com.griffins.fours_movement;
 
-import io.netty.buffer.Unpooled;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import org.quiltmc.qsl.networking.api.PacketByteBufs;
@@ -18,30 +16,46 @@ public class MovementMod implements ModInitializer {
 
 	@Override
 	public void onInitialize(ModContainer mod) {
-		ServerPlayNetworking.registerGlobalReceiver(MovementIDs.DJUMP,
+		ServerPlayNetworking.registerGlobalReceiver(Constants.AIRJUMP,
 			(server, player, handler, buf, responseSender) -> {
 				PacketByteBuf data = PacketByteBufs.create();
 				data.writeUuid(buf.readUuid());
 
 				server.execute(() -> {
 					PlayerLookup.tracking(player).forEach(p -> {
-						ServerPlayNetworking.send(p, MovementIDs.DJUMP, data);
+						ServerPlayNetworking.send(p, Constants.AIRJUMP, data);
 					});
 				});
 			});
 
-		ServerPlayNetworking.registerGlobalReceiver(MovementIDs.LUNGE,
+		ServerPlayNetworking.registerGlobalReceiver(Constants.AIRDASH,
 			(server, player, handler, buf, responseSender) -> {
 				PacketByteBuf data = PacketByteBufs.create();
 				data.writeUuid(buf.readUuid());
 
 				server.execute(() -> {
 					PlayerLookup.tracking(player).forEach(p -> {
-						ServerPlayNetworking.send(p, MovementIDs.LUNGE, data);
+						ServerPlayNetworking.send(p, Constants.AIRDASH, data);
 					});
 				});
 			});
 
-		Registry.register(Registries.ENCHANTMENT, MovementIDs.TJUMP, MovementIDs.TJUMP_ENCHANT);
+		ServerPlayNetworking.registerGlobalReceiver(Constants.LUNGE,
+			(server, player, handler, buf, responseSender) -> {
+				PacketByteBuf data = PacketByteBufs.create();
+				data.writeUuid(buf.readUuid());
+
+				server.execute(() -> {
+					PlayerLookup.tracking(player).forEach(p -> {
+						ServerPlayNetworking.send(p, Constants.LUNGE, data);
+					});
+				});
+			});
+
+		Registry.register(Registries.ENCHANTMENT, Constants.TJUMP, Constants.TJUMP_ENCHANTMENT);
+		Registry.register(Registries.ENCHANTMENT, Constants.AIRDASH, Constants.AIRDASH_ENCHANTMENT);
+
+		Registry.register(Registries.SOUND_EVENT, Constants.AIRDASH, Constants.AIRDASH_SOUND);
+		Registry.register(Registries.SOUND_EVENT, Constants.AIRJUMP, Constants.AIRJUMP_SOUND);
 	}
 }

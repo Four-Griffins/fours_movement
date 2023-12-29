@@ -1,13 +1,13 @@
 {
 	"required": true,
 	"minVersion": "0.8",
-	"package": "com.griffins.movement.mixin",
+	"package": "com.griffins.fours_movement.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [],
 	"client": [
-		"ClientPlayerMovementMixin",
-    "PlayerMovementMixin",
-    "LivingEntityMovementMixin"
+		"ClientPlayerEntityMixin",
+    "PlayerEntityMixin",
+    "LivingEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

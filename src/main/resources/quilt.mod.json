@@ -17,8 +17,8 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "com.griffins.movement.MovementMod",
-			"client_init": "com.griffins.movement.MovementClient"
+			"init": "com.griffins.fours_movement.MovementMod",
+			"client_init": "com.griffins.fours_movement.MovementClient"
 		},
 		"depends": [
 			{
@@ -35,5 +35,5 @@
 			}
 		]
 	},
-	"mixin": "movement.mixins.json"
+	"mixin": "fours_movement.mixins.json"
 }

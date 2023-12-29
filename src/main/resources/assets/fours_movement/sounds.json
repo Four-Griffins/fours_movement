@@ -1,0 +1,20 @@
+{
+  "airdash": {
+    "subtitle": "subtitles.fours_movement.airdash",
+    "sounds": [
+      "fours_movement:airdash"
+    ]
+  },
+  "airjump": {
+    "subtitle": "subtitles.fours_movement.airjump",
+    "sounds": [
+      "fours_movement:airjump"
+    ]
+  },
+  "lunge": {
+    "subtitle": "subtitles.fours_movement.lunge",
+    "sounds": [
+      "fours_movement:lunge"
+    ]
+  }
+}
