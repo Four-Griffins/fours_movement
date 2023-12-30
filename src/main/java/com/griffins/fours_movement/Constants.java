@@ -1,5 +1,7 @@
 package com.griffins.fours_movement;
 
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
@@ -15,4 +17,7 @@ public class Constants {
 	public static final SoundEvent AIRDASH_SOUND = SoundEvent.createFixedRangeEvent(AIRDASH, 16f);
 	public static final SoundEvent AIRJUMP_SOUND = SoundEvent.createFixedRangeEvent(AIRJUMP, 16f);
 	public static final SoundEvent LUNGE_SOUND = SoundEvent.createFixedRangeEvent(LUNGE, 16f);
+
+	public static final ParticleEffect AIRDASH_PARTICLE = ParticleTypes.GLOW;
+	public static final int AIRDASH_PARTICLE_LIFESPAN = 14;
 }

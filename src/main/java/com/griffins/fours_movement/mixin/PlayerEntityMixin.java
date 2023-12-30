@@ -16,6 +16,10 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 @Mixin(PlayerEntity.class)
 abstract class PlayerEntityMixin extends LivingEntity {
 	private int timeSinceSneak = 0;
@@ -25,8 +29,9 @@ abstract class PlayerEntityMixin extends LivingEntity {
 	}
 
 	@Inject(method = "tickMovement", at = @At("HEAD"))
-	private void checkSneak(CallbackInfo info) {
+	private void tickMovement(CallbackInfo info) {
 		if (isSneaking()) { timeSinceSneak = 0; } else { timeSinceSneak++; }
+		MovementEffects.airdash_particle_effect(getWorld());
 	}
 
 	@Redirect(method = "jump", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;addExhaustion(F)V"))
