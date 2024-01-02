@@ -1,29 +1,19 @@
-# Quilt Template Mod
+# 4's Movement
 
-The official Quilt template mod. You can use it as a template for your own mods!
+A Minecraft mod using Quilt that adds several exciting movement options to the game like double jumps and aerial dashes, to make navigating and exploring more fun.
 
-## Usage
+## Features
+* By default, players can now double jump by pressing space while in the air. (Except when wearing an elytra.)
+* The new enchantments Triple Jump I and II, applicable to boots, allows you to triple and quadruple jump respectively.
+* You can perform a higher standing jump, called a lunge, by sneaking, standing up and quickly jumping. Think of it as bending through your knees to get a more powerful jump out.
+* Lunges can also be performed with airjumps. How does that work, you ask? It's an airjump, we're past the point of realism complaints, aren't we?
+* Similarly, sneaking right when landing slightly decreases fall damage, as if you're trying to dampen the landing. Most effective on small falls, to compensate for the fact that you can now jump 4 blocks high with no external help.
+* And lastly, the very powerful Airdash enchantment.
 
-In order to use this mod as a template:
+Airdash can be combined with Triple Jump, and replaces all your aerial jumps with powerful dashes in the direction the player is facing. The controls for that need some explanation though.
+If you press space in the air while holding forwards, you will do a full dash, moving a significant distance at high speed.
+If you instead do not hold forwards while pressing space, the dash will have less momentum in the looking direction but gain more height, allowing for some more precise dashing.
 
-1. Create a new repository from this template with `Use this template`
-2. Clone the recently-created repo on your PC
-3. Make the necessary changes in order to make it yours:
-    - Update `gradle.properties` in order to use your Maven group and mod ID
-        - If you don't know which Maven group to use, and you are planning to host the mod's source code on GitHub, use `io.github.<Your_Username_Here>`
-    - Update `quilt.mod.json` in order to reflect your mod's metadata
-        - If you are planning to include (jar-in-jar) a mod, don't forget to declare its dependency on it!
-        - The icon provided here is a placeholder one. If you aren't able to replace it yet, you can delete it and remove the "icon" property
-    - Create a LICENSE file for this mod! If you don't know which license to use, check out [here](https://choosealicense.com/).
-        - If you use `LICENSE.md`, don't forget to update the buildscript in order to use that file name!
-        - In `quilt.mod.json`, don't forget to put the license's [SPDX identifier](https://spdx.org/licenses/) under the `"license"` property in `"metadata"`.
-        - The GPLv3 and AGPLv3 are not valid mod licenses, so you can use almost any license except for those.
-    - Update the Java sub-directory structure so it reflects your Maven group
-    - If the dependencies in `gradle/libs.versions.toml` aren't up-to-date, feel free to update them! The [linked utility](https://lambdaurora.dev/tools/import_quilt.html) should help you in this easy and quick process.
-4. The mod is now ready to be worked on!
-
-## License
-
-This template on the QuiltMC GitHub is licensed under the [Creative Common Zero v1.0 license](./LICENSE-TEMPLATE.md).
-
-Mods created with this template are not automatically licensed under the CC0, and are not required to give any kind of credit back to QuiltMC for this template.
+## Extra: Lower hunger decay
+For the sake of encouraging the use of the new jump-related mechanics, especially early game when you don't have a lot of good food, the hunger usage of jumps has been reduced significantly.
+This means you can do many more jumps before your hunger runs out, so don't be afraid to use double jumps extensively when exploring a fresh world!
